@@ -204,19 +204,9 @@ BOOL CSuperMarketManagementDlg::OnInitDialog()
 	{
 	case ADMIN_MODE:
 		// 管理员权限：所有按键可用
-		pButtonBuy->EnableWindow(true);
-		pButtonSold->EnableWindow(true);
-		pButtonStaff->EnableWindow(true);
-		pButtonBuyList->EnableWindow(true);
-		pButtonSoldList->EnableWindow(true);
 		break;
 	case NORMAL_MODE:
 		// 普通权限：只有售出、退出可用
-		pButtonBuy->EnableWindow(false);
-		pButtonSold->EnableWindow(true);
-		pButtonStaff->EnableWindow(false);
-		pButtonBuyList->EnableWindow(false);
-		pButtonSoldList->EnableWindow(false);
 		pButtonBuy->ShowWindow(SW_HIDE);
 		pButtonSold->ShowWindow(SW_SHOW);
 		pButtonStaff->ShowWindow(SW_HIDE);
@@ -227,11 +217,6 @@ BOOL CSuperMarketManagementDlg::OnInitDialog()
 		// 错误模式：同上
 		break;
 	default:
-		pButtonBuy->EnableWindow(false);
-		pButtonSold->EnableWindow(false);
-		pButtonStaff->EnableWindow(false);
-		pButtonBuyList->EnableWindow(false);
-		pButtonSoldList->EnableWindow(false);
 		pButtonBuy->ShowWindow(SW_HIDE);
 		pButtonSold->ShowWindow(SW_HIDE);
 		pButtonStaff->ShowWindow(SW_HIDE);
@@ -239,9 +224,10 @@ BOOL CSuperMarketManagementDlg::OnInitDialog()
 		pButtonSoldList->ShowWindow(SW_HIDE);
 		break;
 	}
+	// 检查数据库是否创建，如果没有，则创建
 	checkDatabase();
 	// 刷新UI
-	refreshLayout(this);
+	refreshGoodLayout(this);
 
 	initGoodList(this);
 
@@ -302,7 +288,6 @@ HCURSOR CSuperMarketManagementDlg::OnQueryDragIcon()
 }
 
 
-
 void CSuperMarketManagementDlg::OnBnClickedCancel()
 {
 	// TODO: 在此添加控件通知处理程序代码
@@ -315,10 +300,10 @@ void CSuperMarketManagementDlg::OnSize(UINT nType, int cx, int cy)
 	CDialogEx::OnSize(nType, cx, cy);
 	// TODO: 在此处添加消息处理程序代码
 	// 刷新UI
-	refreshLayout(this);
+	refreshGoodLayout(this);
 }
 
-void refreshLayout(CDialogEx* dlg)
+void refreshGoodLayout(CDialogEx* dlg)
 {
 	CButton* pButtonBuy = (CButton*)dlg->GetDlgItem(IDC_BUTTON_BUY);
 	CButton* pButtonSold = (CButton*)dlg->GetDlgItem(IDC_BUTTON_SOLD);
@@ -501,7 +486,7 @@ void CSuperMarketManagementDlg::OnBnClickedButtonSold()
 	}
 }
 
-
+// 人员管理
 void CSuperMarketManagementDlg::OnBnClickedButtonStaff()
 {
 	// TODO: 在此添加控件通知处理程序代码
@@ -510,7 +495,7 @@ void CSuperMarketManagementDlg::OnBnClickedButtonStaff()
 
 }
 
-
+// 进货管理
 void CSuperMarketManagementDlg::OnBnClickedButtonBuylist()
 {
 	// TODO: 在此添加控件通知处理程序代码
@@ -518,7 +503,7 @@ void CSuperMarketManagementDlg::OnBnClickedButtonBuylist()
 	buymanageDlg.DoModal();
 }
 
-
+// 售货管理
 void CSuperMarketManagementDlg::OnBnClickedButtonSoldlist()
 {
 	// TODO: 在此添加控件通知处理程序代码

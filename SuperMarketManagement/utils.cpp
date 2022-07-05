@@ -32,6 +32,12 @@
 #include "pch.h"
 #include "utils.h"
 
+/// <summary>
+/// 从编辑框中获取输入字符串
+/// </summary>
+/// <param name="pthis">Dialog的this指针</param>
+/// <param name="ctl_id">编辑框控件ID</param>
+/// <returns>tstring类型输入字符串</returns>
 extern tstring utils::GetDialogEditorString(const CDialogEx* pthis, int ctl_id)
 {
 	auto* edit = reinterpret_cast<CEdit*>(pthis->GetDlgItem(ctl_id));
@@ -44,7 +50,11 @@ extern tstring utils::GetDialogEditorString(const CDialogEx* pthis, int ctl_id)
 	return res;
 }
 
-// 获取当前时间字符串
+/// <summary>
+/// 获取当前时间字符串
+/// </summary>
+/// <param name=""></param>
+/// <returns></returns>
 extern std::wstring utils::getTime(void)
 {
 #pragma warning( disable : 4996 )
@@ -57,6 +67,11 @@ extern std::wstring utils::getTime(void)
 	return wtime;
 }
 
+/// <summary>
+/// wstring类型转换为string类型
+/// </summary>
+/// <param name="ws">wstring类型</param>
+/// <returns>string类型</returns>
 extern std::string utils::wstring2string(const std::wstring& ws)
 {
 	_bstr_t t = ws.c_str();

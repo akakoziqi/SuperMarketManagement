@@ -45,13 +45,28 @@ typedef enum Mode
 	ERROR_MODE
 } Mode_t;
 
-// 检查数据库是否创建
+/// <summary>
+/// 检查数据库是否创建
+/// </summary>
+/// <param name="">none</param>
 void checkDatabase(void);
-// 刷新布局
-void refreshLayout(CDialogEx* dlg);
-// 初始化商品列表框
+
+/// <summary>
+/// 刷新UI布局
+/// </summary>
+/// <param name="dlg">Dialog this指针</param>
+void refreshGoodLayout(CDialogEx* dlg);
+
+/// <summary>
+/// 初始化商品列表框
+/// </summary>
+/// <param name="dlg">Dialog this指针</param>
 void initGoodList(CDialogEx* dlg);
-// 刷新商品列表框
+
+/// <summary>
+/// 刷新商品列表框
+/// </summary>
+/// <param name="dlg">Dialog this指针</param>
 void refreshGoodList(CDialogEx* dlg);
 
 // CSuperMarketManagementDlg 对话框
