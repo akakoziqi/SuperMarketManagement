@@ -483,12 +483,16 @@ void CSuperMarketManagementDlg::OnBnClickedButtonSold()
 	int currentItem = pList->GetNextSelectedItem(pos); 
 	// 获取所选商品名
 	tstring name(pList->GetItemText(currentItem, 0));
-	
+	// 获取所选商品价格
+	tstring price(pList->GetItemText(currentItem, 1));
 	// 跳转售出窗口
 	int res;
 	Sold soldDlg;
-	// 传递当前所选商品名
+	// 传递当前所选商品名和单价
 	soldDlg.SetProperty(name);
+	soldDlg.SetPrice(price);
+
+	// 弹出售出窗口
 	res = soldDlg.DoModal();
 	
 	if (res == IDOK)

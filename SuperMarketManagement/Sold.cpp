@@ -64,6 +64,11 @@ void Sold::SetProperty(const tstring& _name)
 	name = _name;
 }
 
+void Sold::SetPrice(const tstring& _price)
+{
+	price = _price;
+}
+
 
 BEGIN_MESSAGE_MAP(Sold, CDialogEx)
 	ON_BN_CLICKED(IDCANCEL, &Sold::OnBnClickedCancel)
@@ -81,12 +86,14 @@ BOOL Sold::OnInitDialog()
 
 	// 初始化
 	CEdit* pName = (CEdit*)this->GetDlgItem(IDC_EDIT_SOLD_NAME);
+	CEdit* pPrice = (CEdit*)this->GetDlgItem(IDC_EDIT_SOLD_PRICE);
+
 	pName->SetWindowText(std::format(L"{}", this->name).c_str());
+	pPrice->SetWindowText(std::format(L"{}", this->price).c_str());
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 异常: OCX 属性页应返回 FALSE
 }
-
 
 
 void Sold::OnBnClickedCancel()
@@ -112,30 +119,55 @@ void Sold::OnBnClickedOk()
 	);
 	// 剩余储量
 	int reserved = std::atoi(utils::wstring2string(nocori).c_str());
+	// 卖出为负
 	if (num <= 0)
 	{
 		MessageBox(_T("请输入正确的数量"), _T("错误"), MB_OK);
 		return;
 	}
+	// 卖出比剩余多
 	if (reserved - num < 0)
 	{
 		MessageBox(_T("剩余库存不足"), _T("错误"), MB_OK);
 		return;
 	}
-	// 如果OK,进行数据库操作
-	sqlite.executeSQLNoRet(std::format(
-		L"UPDATE Good SET quantity = {} WHERE name = '{}'", 
-		reserved - num, 
-		name).c_str());
+	// 刚好卖完
+	else if (reserved - num == 0)
+	{
+		// 直接删除条目
+		sqlite.executeSQLNoRet(
+			std::format(
+				L"DELETE FROM Good WHERE name = '{}' AND price == {}",
+				this->name,
+				this->price
+			).c_str()
+		);
+	}
+	// 有剩余
+	else
+	{
+		// 更新库存量
+		sqlite.executeSQLNoRet(
+			std::format(
+				L"UPDATE Good SET quantity = {} WHERE name = '{}' AND price == {}",
+				reserved - num,
+				this->name,
+				this->price
+			).c_str()
+		);
+	}
 
 	// 向售出表中添加条目
-	sqlite.executeSQLNoRet(std::format(
-		L"INSERT INTO Sales(datime, name, quantity, operator)"
-		"VALUES('{}', '{}', {}, '{}')", 
-		utils::getTime(), 
-		name,
-		num,
-		currentUser).c_str());
+	sqlite.executeSQLNoRet(
+		std::format(
+			L"INSERT INTO Sales(datime, name, quantity, operator)"
+			"VALUES('{}', '{}', {}, '{}')", 
+			utils::getTime(), 
+			this->name,
+			num,
+			currentUser
+		).c_str()
+	);
 
 	CDialogEx::OnOK();
 }

@@ -79,19 +79,24 @@ void Buy::OnBnClickedOk()
 	tstring price = GetEditBoxString(IDC_EDIT_BUY_PRICE);
 	tstring quantity = GetEditBoxString(IDC_EDIT_BUY_QUANTITY);
 
-	// 如果存在此商品
-	if (sqlite.existItemInTableW(L"Good", std::format(L"name == '{}'", name).c_str(), L"id"))
+	// 如果存在此商品， 且价格相同
+	if (sqlite.existItemInTableW(L"Good", 
+		std::format(L"name == '{}' AND price == {}", 
+			name, 
+			price
+		).c_str(), L"id"))
 	{
 		// 数量更新
 		sqlite.executeSQLNoRet(
 			std::format(
-				L"UPDATE Good SET quantity = quantity + {} WHERE name = '{}'",
+				L"UPDATE Good SET quantity = quantity + {} WHERE name = '{}' AND price == {}",
 				quantity,
-				name
+				name,
+				price
 			).c_str()
 		);
 	}
-	// 如果不存在此商品
+	// 如果不存在此商品，或者价格不相同
 	else
 	{
 		// 添加条目

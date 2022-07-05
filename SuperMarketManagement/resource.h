@@ -1,35 +1,4 @@
-﻿/*
- | 超市管理系统
- | 文件名称: Resource.h
- | 文件作用: 自动生成资源文件
- | 创建日期: 2022-07-02
- | 更新日期: 2022-07-05
- | 开发人员: Akako
- +----------------------------
- MIT License
-
- Copyright (C) Akako
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
-*/
-
-//{{NO_DEPENDENCIES}}
+﻿//{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ 生成的包含文件。
 // 供 SuperMarketManagement.rc 使用
 //
@@ -78,6 +47,8 @@
 #define IDC_LIST_BUYMANAGE              1030
 #define IDC_BUTTON_SOLDMANAGE_DELETE    1031
 #define IDC_LIST_SOLDMANAGE             1032
+#define IDC_EDIT1                       1033
+#define IDC_EDIT_SOLD_PRICE             1033
 
 // Next default values for new objects
 // 
@@ -85,7 +56,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        138
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1033
+#define _APS_NEXT_CONTROL_VALUE         1034
 #define _APS_NEXT_SYMED_VALUE           111
 #endif
 #endif

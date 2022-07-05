@@ -48,6 +48,7 @@ public:
 	/// </summary>
 	/// <param name="name">名字</param>
 	void SetProperty(const tstring &name);
+	void SetPrice(const tstring& _price);
 
 	virtual ~Sold();
 
@@ -66,6 +67,7 @@ public:
 private:
 	// 显示的商品名
 	tstring name;
+	tstring price;
 public:
 	virtual BOOL OnInitDialog();
 };
