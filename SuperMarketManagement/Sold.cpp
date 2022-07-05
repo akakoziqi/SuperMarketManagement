@@ -58,12 +58,19 @@ void Sold::DoDataExchange(CDataExchange* pDX)
 	CDialogEx::DoDataExchange(pDX);
 }
 
-
+/// <summary>
+/// 传递商品名
+/// </summary>
+/// <param name="_name">商品名</param>
 void Sold::SetProperty(const tstring& _name)
 {
 	name = _name;
 }
 
+/// <summary>
+/// 传递商品价格
+/// </summary>
+/// <param name="_price">价格</param>
 void Sold::SetPrice(const tstring& _price)
 {
 	price = _price;

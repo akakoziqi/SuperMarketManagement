@@ -36,7 +36,7 @@
 #include "SuperMarketManagement.h"
 #include "afxdialogex.h"
 #include "SoldManage.h"
-
+#include "utils.h"
 
 // SoldManage 对话框
 
@@ -140,6 +140,9 @@ BOOL SoldManage::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  在此添加额外的初始化
+	// 设置窗口初始化为全屏
+	utils::FullScreen(this);
+
 	refreshSoldLayout(this);
 	initSoldList(this);
 	refreshSoldList(this);

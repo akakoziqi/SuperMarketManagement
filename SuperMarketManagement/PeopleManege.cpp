@@ -38,7 +38,7 @@
 #include "afxdialogex.h"
 #include "PeopleManege.h"
 #include "PeopleAdd.h"
-
+#include "utils.h"
 // PeopleManege 对话框
 
 IMPLEMENT_DYNAMIC(PeopleManege, CDialogEx)
@@ -153,6 +153,9 @@ BOOL PeopleManege::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  在此添加额外的初始化
+	// 设置窗口初始化为全屏
+	utils::FullScreen(this);
+
 	initPeopleList(this);
 	refreshPeopleLayout(this);
 	refreshPelpleList(this);

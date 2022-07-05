@@ -49,6 +49,7 @@
 #include "PeopleManege.h"
 #include "BuyManage.h"
 #include "SoldManage.h"
+#include "utils.h"
 
 Mode_t mode;
 
@@ -226,6 +227,9 @@ BOOL CSuperMarketManagementDlg::OnInitDialog()
 	}
 	// 检查数据库是否创建，如果没有，则创建
 	checkDatabase();
+	// 设置窗口初始化为全屏
+	utils::FullScreen(this);
+
 	// 刷新UI
 	refreshGoodLayout(this);
 

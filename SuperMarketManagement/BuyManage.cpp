@@ -36,7 +36,7 @@
 #include "SuperMarketManagement.h"
 #include "afxdialogex.h"
 #include "BuyManage.h"
-
+#include "utils.h"
 
 // BuyManage 对话框
 
@@ -143,6 +143,9 @@ BOOL BuyManage::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  在此添加额外的初始化
+	// 设置窗口初始化为全屏
+	utils::FullScreen(this);
+
 	refreshBuyManageLayout(this);
 	initBuyManageList(this);
 	refreshBuyManageList(this);

@@ -79,3 +79,14 @@ extern std::string utils::wstring2string(const std::wstring& ws)
 	std::string result = pchar;
 	return result;
 }
+
+/// <summary>
+/// 设置窗口为全屏
+/// </summary>
+/// <param name="pthis">Dialog this指针</param>
+extern void utils::FullScreen(CDialogEx* pthis)
+{
+	int with = GetSystemMetrics(SM_CXFULLSCREEN);
+	int heigh = GetSystemMetrics(SM_CYFULLSCREEN);
+	pthis->SetWindowPos(NULL, 0, 0, with, heigh, NULL);
+}
