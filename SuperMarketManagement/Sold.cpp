@@ -119,7 +119,10 @@ void Sold::OnBnClickedOk()
 
 	int num = std::atoi(utils::wstring2string(quantity).c_str());
 	sqlite.executeSQLWithRet(
-		std::format(L"SELECT quantity FROM Good WHERE name == '{}'", this->name).c_str(),
+		std::format(L"SELECT quantity FROM Good WHERE name == '{}' AND price == {}",
+			this->name,
+			this->price
+		).c_str(),
 		[&](std::vector<tstring>& lst) -> void {
 			nocori = lst[0];
 		}

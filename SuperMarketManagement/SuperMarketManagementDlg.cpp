@@ -188,8 +188,17 @@ BOOL CSuperMarketManagementDlg::OnInitDialog()
 	else
 	{
 		FirstUse firstuseDlg;
-		firstuseDlg.DoModal();
-		mode = ADMIN_MODE;
+		int res = firstuseDlg.DoModal();
+		// 如果成功创建了管理员账户
+		if (res == IDOK)
+		{
+			mode = ADMIN_MODE;
+		}
+		else
+		{
+			mode = GUEST_MODE;
+			exit(0);
+		}
 	}
 
 	CButton* pButtonBuy = (CButton*)this->GetDlgItem(IDC_BUTTON_BUY);
@@ -387,7 +396,8 @@ void refreshGoodList(CDialogEx* dlg)
 			pGoodListView->SetItemText(count, 1, (LPCTSTR)lst[1].c_str());
 			pGoodListView->SetItemText(count, 2, (LPCTSTR)lst[2].c_str());
 			count++;
-		});
+		}
+	);
 
 }
 
