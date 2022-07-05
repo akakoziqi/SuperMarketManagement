@@ -225,9 +225,6 @@
     <ClCompile Include="SQLite3\SQLDatabase.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SQLite3\sqlite3.c">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="SuperMarketManagement.cpp" />
     <ClCompile Include="SuperMarketManagementDlg.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -240,6 +237,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\SuperMarketManagement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SQLite3\sqlite3.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

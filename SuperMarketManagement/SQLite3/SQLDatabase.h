@@ -1,6 +1,6 @@
 /*
  | 超市管理系统
- | 文件名称: database.h
+ | 文件名称: SQLDatabase.h
  | 文件作用: sqlite3数据库的封装
  | 创建日期: 2020-05-18
  | 更新日期: 2022-07-05
@@ -34,9 +34,6 @@
 #pragma once
 #include "../pch.h"
 #include "alloc.h"
-
-//#define memalloc(typ, count) (typ*)malloc((count) * sizeof(typ))
-//#define memfree(p) free(p)
 
 
 class SQLDatabase

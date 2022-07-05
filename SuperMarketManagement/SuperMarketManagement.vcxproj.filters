@@ -86,9 +86,6 @@
     <ClCompile Include="SQLite3\SQLDatabase.cpp">
       <Filter>SQLite3</Filter>
     </ClCompile>
-    <ClCompile Include="SQLite3\sqlite3.c">
-      <Filter>SQLite3</Filter>
-    </ClCompile>
     <ClCompile Include="SQLite3\alloc.cpp">
       <Filter>SQLite3</Filter>
     </ClCompile>
@@ -134,5 +131,10 @@
     <Image Include="res\SuperMarketManagement.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SQLite3\sqlite3.lib">
+      <Filter>SQLite3</Filter>
+    </Library>
   </ItemGroup>
 </Project>
