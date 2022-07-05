@@ -46,7 +46,7 @@
 #include <vector>
 #include <tchar.h>  
 #include <functional>
-#include "SQLite3/sqlite3.h"
+#include "sqlite3.h"
 #include <string.h>
 #include <format>
 

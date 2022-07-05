@@ -30,7 +30,7 @@
  SOFTWARE.
 */
 
-#include "../pch.h"
+#include "pch.h"
 #include "SQLDatabase.h"
 
 SQLDatabase::SQLDatabase()

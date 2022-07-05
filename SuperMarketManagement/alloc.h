@@ -32,7 +32,7 @@
 
 
 #pragma once
-#include "../pch.h"
+#include "pch.h"
 
 // ·ÖÅäÄÚ´æ¿Õ¼ä
 void* __memalloc(size_t sz_count);

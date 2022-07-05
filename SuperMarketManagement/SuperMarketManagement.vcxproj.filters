@@ -36,15 +36,6 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="SQLite3\SQLDatabase.h">
-      <Filter>SQLite3</Filter>
-    </ClInclude>
-    <ClInclude Include="SQLite3\sqlite3.h">
-      <Filter>SQLite3</Filter>
-    </ClInclude>
-    <ClInclude Include="SQLite3\alloc.h">
-      <Filter>SQLite3</Filter>
-    </ClInclude>
     <ClInclude Include="FirstUse.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -72,6 +63,15 @@
     <ClInclude Include="SoldManage.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="alloc.h">
+      <Filter>SQLite3</Filter>
+    </ClInclude>
+    <ClInclude Include="SQLDatabase.h">
+      <Filter>SQLite3</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite3.h">
+      <Filter>SQLite3</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SuperMarketManagement.cpp">
@@ -82,12 +82,6 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SQLite3\SQLDatabase.cpp">
-      <Filter>SQLite3</Filter>
-    </ClCompile>
-    <ClCompile Include="SQLite3\alloc.cpp">
-      <Filter>SQLite3</Filter>
     </ClCompile>
     <ClCompile Include="FirstUse.cpp">
       <Filter>源文件</Filter>
@@ -116,6 +110,12 @@
     <ClCompile Include="SoldManage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="alloc.cpp">
+      <Filter>SQLite3</Filter>
+    </ClCompile>
+    <ClCompile Include="SQLDatabase.cpp">
+      <Filter>SQLite3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SuperMarketManagement.rc">
@@ -133,7 +133,7 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="SQLite3\sqlite3.lib">
+    <Library Include="sqlite3.lib">
       <Filter>SQLite3</Filter>
     </Library>
   </ItemGroup>

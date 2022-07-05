@@ -167,6 +167,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -185,6 +187,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="alloc.h" />
     <ClInclude Include="Buy.h" />
     <ClInclude Include="BuyManage.h" />
     <ClInclude Include="FirstUse.h" />
@@ -196,15 +199,15 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sold.h" />
     <ClInclude Include="SoldManage.h" />
-    <ClInclude Include="SQLite3\alloc.h" />
-    <ClInclude Include="SQLite3\SQLDatabase.h" />
-    <ClInclude Include="SQLite3\sqlite3.h" />
+    <ClInclude Include="SQLDatabase.h" />
+    <ClInclude Include="sqlite3.h" />
     <ClInclude Include="SuperMarketManagement.h" />
     <ClInclude Include="SuperMarketManagementDlg.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="alloc.cpp" />
     <ClCompile Include="Buy.cpp" />
     <ClCompile Include="BuyManage.cpp" />
     <ClCompile Include="FirstUse.cpp" />
@@ -219,12 +222,7 @@
     <ClCompile Include="PeopleManege.cpp" />
     <ClCompile Include="Sold.cpp" />
     <ClCompile Include="SoldManage.cpp" />
-    <ClCompile Include="SQLite3\alloc.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="SQLite3\SQLDatabase.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="SQLDatabase.cpp" />
     <ClCompile Include="SuperMarketManagement.cpp" />
     <ClCompile Include="SuperMarketManagementDlg.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -239,7 +237,7 @@
     <Image Include="res\SuperMarketManagement.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="SQLite3\sqlite3.lib" />
+    <Library Include="sqlite3.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

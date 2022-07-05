@@ -31,6 +31,7 @@
 */
 
 #include "alloc.h"
+#include "pch.h"
 
 // 该函数可以保证每次的返回值有效, 不然会终止程序
 void* __memalloc(size_t sz_count)

@@ -40,7 +40,7 @@
 #endif
 
 #include "resource.h"		// 主符号
-#include "SQLite3/SQLDatabase.h"
+#include "SQLDatabase.h"
 #include "SuperMarketManagementDlg.h"
 
 

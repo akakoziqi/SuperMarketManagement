@@ -37,7 +37,7 @@
 #include "framework.h"
 #include "SuperMarketManagement.h"
 #include "SuperMarketManagementDlg.h"
-#include "SQLite3/SQLDatabase.h"
+#include "SQLDatabase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
