@@ -14,6 +14,7 @@
 #define IDD_PEOLPEADD                   108
 #define IDD_BUYMANAGE                   109
 #define IDD_SOLDMANAGE                  110
+#define IDD_STATISTIC                   111
 #define IDR_MAINFRAME                   128
 #define IDC_EDIT_USERNAME               1001
 #define IDC_EDIT_PASSWORD               1002
@@ -47,16 +48,18 @@
 #define IDC_LIST_BUYMANAGE              1030
 #define IDC_BUTTON_SOLDMANAGE_DELETE    1031
 #define IDC_LIST_SOLDMANAGE             1032
-#define IDC_EDIT1                       1033
 #define IDC_EDIT_SOLD_PRICE             1033
+#define IDC_COMBO_STATISTIC             1034
+#define IDC_EDIT_STATISTIC              1035
+#define IDC_BUTTON_STATISTIC            1036
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        138
+#define _APS_NEXT_RESOURCE_VALUE        139
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1034
-#define _APS_NEXT_SYMED_VALUE           111
+#define _APS_NEXT_CONTROL_VALUE         1037
+#define _APS_NEXT_SYMED_VALUE           112
 #endif
 #endif
