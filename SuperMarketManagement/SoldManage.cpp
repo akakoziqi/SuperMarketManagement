@@ -74,10 +74,11 @@ void initSoldList(CDialogEx* dlg)
 	//设置控件属性。
 	pListView->SetExtendedStyle(pListView->GetExtendedStyle() | LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	pListView->InsertColumn(0, _T("ID"), LVCFMT_LEFT, 200, 0);
-	pListView->InsertColumn(1, _T("日期 时间"), LVCFMT_LEFT, 200, 0);
-	pListView->InsertColumn(2, _T("商品名"), LVCFMT_LEFT, 200, 1);
-	pListView->InsertColumn(3, _T("数量"), LVCFMT_LEFT, 200, 2);
-	pListView->InsertColumn(4, _T("操作员"), LVCFMT_LEFT, 200, 3);
+	pListView->InsertColumn(1, _T("日期 时间"), LVCFMT_LEFT, 200, 1);
+	pListView->InsertColumn(2, _T("商品名"), LVCFMT_LEFT, 200, 2);
+	pListView->InsertColumn(3, _T("商品单价"), LVCFMT_LEFT, 200, 3);
+	pListView->InsertColumn(4, _T("数量"), LVCFMT_LEFT, 200, 4);
+	pListView->InsertColumn(5, _T("操作员"), LVCFMT_LEFT, 200, 5);
 }
 
 void refreshSoldList(CDialogEx* dlg)
@@ -94,6 +95,7 @@ void refreshSoldList(CDialogEx* dlg)
 			pListView->SetItemText(count, 2, (LPCTSTR)lst[2].c_str());
 			pListView->SetItemText(count, 3, (LPCTSTR)lst[3].c_str());
 			pListView->SetItemText(count, 4, (LPCTSTR)lst[4].c_str());
+			pListView->SetItemText(count, 5, (LPCTSTR)lst[5].c_str());
 			count++;
 		});
 

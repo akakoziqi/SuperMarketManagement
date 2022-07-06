@@ -448,6 +448,7 @@ void checkDatabase(void)
 				"id"		INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 				"datime"	TEXT NOT NULL,
 				"name"		TEXT NOT NULL,
+				"price"		TEXT NOT NULL,
 				"quantity"	INTEGER NOT NULL,
 				"operator"	TEXT NOT NULL);)sql");
 	}

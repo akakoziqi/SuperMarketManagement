@@ -170,10 +170,11 @@ void Sold::OnBnClickedOk()
 	// 向售出表中添加条目
 	sqlite.executeSQLNoRet(
 		std::format(
-			L"INSERT INTO Sales(datime, name, quantity, operator)"
-			"VALUES('{}', '{}', {}, '{}')", 
+			L"INSERT INTO Sales(datime, name, price, quantity, operator)"
+			"VALUES('{}', '{}', {}, '{}', '{}')", 
 			utils::getTime(), 
 			this->name,
+			this->price,
 			num,
 			currentUser
 		).c_str()
