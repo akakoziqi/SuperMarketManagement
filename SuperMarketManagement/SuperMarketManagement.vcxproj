@@ -201,6 +201,7 @@
     <ClInclude Include="SoldManage.h" />
     <ClInclude Include="SQLDatabase.h" />
     <ClInclude Include="sqlite3.h" />
+    <ClInclude Include="Statistic.h" />
     <ClInclude Include="SuperMarketManagement.h" />
     <ClInclude Include="SuperMarketManagementDlg.h" />
     <ClInclude Include="targetver.h" />
@@ -223,6 +224,7 @@
     <ClCompile Include="Sold.cpp" />
     <ClCompile Include="SoldManage.cpp" />
     <ClCompile Include="SQLDatabase.cpp" />
+    <ClCompile Include="Statistic.cpp" />
     <ClCompile Include="SuperMarketManagement.cpp" />
     <ClCompile Include="SuperMarketManagementDlg.cpp" />
     <ClCompile Include="utils.cpp" />

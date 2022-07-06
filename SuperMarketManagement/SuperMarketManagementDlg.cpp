@@ -50,6 +50,7 @@
 #include "BuyManage.h"
 #include "SoldManage.h"
 #include "utils.h"
+#include "Statistic.h"
 
 Mode_t mode;
 
@@ -112,6 +113,7 @@ BEGIN_MESSAGE_MAP(CSuperMarketManagementDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_STAFF, &CSuperMarketManagementDlg::OnBnClickedButtonStaff)
 	ON_BN_CLICKED(IDC_BUTTON_BUYLIST, &CSuperMarketManagementDlg::OnBnClickedButtonBuylist)
 	ON_BN_CLICKED(IDC_BUTTON_SOLDLIST, &CSuperMarketManagementDlg::OnBnClickedButtonSoldlist)
+	ON_BN_CLICKED(IDC_BUTTON_STATISTIC, &CSuperMarketManagementDlg::OnBnClickedButtonStatistic)
 END_MESSAGE_MAP()
 
 
@@ -206,6 +208,7 @@ BOOL CSuperMarketManagementDlg::OnInitDialog()
 	CButton* pButtonStaff = (CButton*)this->GetDlgItem(IDC_BUTTON_STAFF);
 	CButton* pButtonBuyList = (CButton*)this->GetDlgItem(IDC_BUTTON_BUYLIST);
 	CButton* pButtonSoldList = (CButton*)this->GetDlgItem(IDC_BUTTON_SOLDLIST);
+	CButton* pButtonStatistic = (CButton*)this->GetDlgItem(IDC_BUTTON_STATISTIC);
 	CButton* pButtonExit = (CButton*)this->GetDlgItem(IDCANCEL);
 	CListCtrl* pGoodListView = (CListCtrl*)this->GetDlgItem(IDC_LIST_GOODS);
 
@@ -222,6 +225,7 @@ BOOL CSuperMarketManagementDlg::OnInitDialog()
 		pButtonStaff->ShowWindow(SW_HIDE);
 		pButtonBuyList->ShowWindow(SW_HIDE);
 		pButtonSoldList->ShowWindow(SW_HIDE);
+		pButtonStatistic->ShowWindow(SW_HIDE);
 		break;
 		// 访客模式：所有按键都不可用，只能查看当前库存状态
 		// 错误模式：同上
@@ -232,6 +236,7 @@ BOOL CSuperMarketManagementDlg::OnInitDialog()
 		pButtonStaff->ShowWindow(SW_HIDE);
 		pButtonBuyList->ShowWindow(SW_HIDE);
 		pButtonSoldList->ShowWindow(SW_HIDE);
+		pButtonStatistic->ShowWindow(SW_HIDE);
 		break;
 	}
 	// 检查数据库是否创建，如果没有，则创建
@@ -323,6 +328,7 @@ void refreshGoodLayout(CDialogEx* dlg)
 	CButton* pButtonStaff = (CButton*)dlg->GetDlgItem(IDC_BUTTON_STAFF);
 	CButton* pButtonBuyList = (CButton*)dlg->GetDlgItem(IDC_BUTTON_BUYLIST);
 	CButton* pButtonSoldList = (CButton*)dlg->GetDlgItem(IDC_BUTTON_SOLDLIST);
+	CButton* pButtonStatistic = (CButton*)dlg->GetDlgItem(IDC_BUTTON_STATISTIC);
 	CButton* pButtonExit = (CButton*)dlg->GetDlgItem(IDCANCEL);
 	CListCtrl* pGoodListView = (CListCtrl*)dlg->GetDlgItem(IDC_LIST_GOODS);
 
@@ -375,11 +381,18 @@ void refreshGoodLayout(CDialogEx* dlg)
 		pButtonSoldList->SetWindowPos(NULL, rect.left + 50, rect.top + 100 + 100 * 4, 0, 0, SWP_NOSIZE);
 	}
 
+	if (pButtonStatistic)
+	{
+		dlg->GetWindowRect(&rect);  //获取窗口rect，
+		dlg->ScreenToClient(rect);  //从窗口尺寸转换到用户区rec
+		pButtonStatistic->SetWindowPos(NULL, rect.left + 50, rect.top + 100 + 100 * 5, 0, 0, SWP_NOSIZE);
+	}
+
 	if (pButtonExit)
 	{
 		dlg->GetWindowRect(&rect);  //获取窗口rect，
 		dlg->ScreenToClient(rect);  //从窗口尺寸转换到用户区rec
-		pButtonExit->SetWindowPos(NULL, rect.left + 50, rect.top + 100 + 100 * 5, 0, 0, SWP_NOSIZE);
+		pButtonExit->SetWindowPos(NULL, rect.left + 50, rect.top + 100 + 100 * 6, 0, 0, SWP_NOSIZE);
 	}
 }
 
@@ -524,4 +537,12 @@ void CSuperMarketManagementDlg::OnBnClickedButtonSoldlist()
 	// TODO: 在此添加控件通知处理程序代码
 	SoldManage soldmanageDlg;
 	soldmanageDlg.DoModal();
+}
+
+// 统计信息
+void CSuperMarketManagementDlg::OnBnClickedButtonStatistic()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	Statistic staDlg;
+	staDlg.DoModal();
 }

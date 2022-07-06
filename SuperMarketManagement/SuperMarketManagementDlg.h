@@ -103,4 +103,5 @@ public:
 	afx_msg void OnBnClickedButtonStaff();
 	afx_msg void OnBnClickedButtonBuylist();
 	afx_msg void OnBnClickedButtonSoldlist();
+	afx_msg void OnBnClickedButtonStatistic();
 };
