@@ -87,12 +87,14 @@ void FirstUse::OnBnClickedOk()
 	}
 
 	// 创建用户表
-	sqlite.executeSQLNoRet(_T(R"sql(CREATE TABLE "User" (
-		"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-		"username"	TEXT NOT NULL,
-		"password"	TEXT NOT NULL,
-		"permission"	TEXT NOT NULL,
-		"last_login_time"	TEXT NOT NULL);)sql"));
+	sqlite.executeSQLNoRet(
+		_T(R"sql(CREATE TABLE "User" (
+		"id"				INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+		"username"			TEXT NOT NULL,
+		"password"			TEXT NOT NULL,
+		"permission"		TEXT NOT NULL,
+		"last_login_time"	TEXT NOT NULL);)sql")
+	);
 
 	// 向表中插入第一个管理员用户
 	sqlite.executeSQLNoRet(std::format(L"INSERT INTO User(username, password, permission, last_login_time) VALUES('{}','{}','Admin','{}')",
